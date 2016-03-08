@@ -42,8 +42,9 @@ function hunt(db, res) {
     });
     Promise.all(promises)
       .then(function(success) {
-        console.log('DO WE EVEN GO HERE?');
-        res.json(matches);
+        if (res) {
+          res.json(matches);
+        }
       });
   });
 }

@@ -25,7 +25,6 @@ class Crawler {
     }, true);
   }
 
-
   /*
   * result: {title (string), price (number)}
   */

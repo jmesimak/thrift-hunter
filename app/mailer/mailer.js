@@ -1,3 +1,5 @@
+'use strict';
+
 var aws = require('aws-sdk');
 var config = require('./config.json');
 aws.config.update({accessKeyId: config.accessKeyId, secretAccessKey: config.secretAccessKey, region: config.region});
@@ -30,8 +32,10 @@ function sendMatches(hunt, matches) {
       }
     }
   }, function(err, data) {
-    console.log(err);
-    console.log(data);
+    if (err) {
+      console.log(`Error sending emails`);
+      console.log(err);
+    }
   });
 }
 
