@@ -1,0 +1,28 @@
+body {
+  padding-top: 2em;
+}
+
+ul.hunts {
+  list-style-type: none;
+  padding: 0;
+}
+
+.panel h3 {
+  margin: 0;
+}
+
+.panel h3 a {
+  color: white;
+}
+
+.match p {
+  margin: 0;
+}
+
+.match {
+  margin-bottom: 1em;
+}
+
+.nav a {
+  cursor: pointer;
+}

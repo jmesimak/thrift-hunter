@@ -1,0 +1,16 @@
+<h1>{{hunt.title}}</h1>
+
+<h2>Listing {{hunt.matches.length}} possible matches</h2>
+
+<ul>
+  <li ng-repeat="m in hunt.matches | orderBy:'createdAt':true">
+    <div class="match">
+      <p><a ng-href="{{m.href}}" target="_blank">{{m.title}}</a> <b>{{m.price}}€</b></p>
+      <p>Spotted at: {{m.createdAt | date:'HH:mm, dd.MM.yyyy'}}</p>
+      <button ng-if="!m.favorite" class="btn btn-xs btn-primary" ng-click="favoriteMatch(m)">Save to favorites</button>
+      <button ng-if="m.favorite" class="btn btn-xs btn-danger" ng-click="favoriteMatch(m)">Remove from favorites</button>
+      <button class="btn btn-xs btn-success" ng-click="markAsRead(m)">Mark as read</button>
+      <button class="btn btn-xs btn-danger" ng-click="deleteMatch(m)">Delete</button>
+    </div>
+  </li>
+</ul>

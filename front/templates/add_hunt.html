@@ -1,0 +1,52 @@
+<div ng-if="added.title" class="alert alert-success" role="alert">
+  <strong>Hunt for {{added.title}} added</strong>
+</div>
+
+<form>
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" ng-model="newHunt.title">
+  </div>
+
+  <div class="form-group">
+    <label>Keyword</label>
+
+    <input class="form-control" type="text" ng-model="newHunt.include">
+  </div>
+
+  <div class="form-group">
+    <label>Exclude keyword</label>
+
+    <input class="form-control" type="text" ng-model="newHunt.exclude">
+  </div>
+
+  <div class="form-group">
+    <label>Max Price</label>
+
+    <input class="form-control" type="number" ng-model="newHunt.maxPrice">
+  </div>
+
+
+
+  <div class="form-group">
+    <label>Location</label>
+
+    <input class="form-control" type="text" ng-model="newHunt.location">
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+
+    <input class="form-control" type="text" ng-model="newHunt.category">
+  </div>
+
+
+  <div class="form-group">
+    <label>
+      <input type="checkbox" ng-model="newHunt.hasPrice">
+      Has Price
+    </label>
+  </div>
+
+  <button class="btn btn-success" ng-click="beginHunt()">Let the hunt begin</button>
+</form>

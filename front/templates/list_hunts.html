@@ -1,0 +1,25 @@
+<h1>{{hunts.length > 0 ? 'Time to check out your hunts' : 'Y u no hunt?!'}}</h1>
+
+<ul ng-init=$scope.init() class="hunts">
+  <li ng-repeat="hunt in hunts">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3><a ng-href="#/hunt/{{hunt._id}}">{{hunt.title}},
+          <ng-pluralize count="hunt.matches.length"
+                 when="{'0': '0 entries',
+                     'one': '1 entry',
+                     'other': '{} entries'}">
+          </ng-pluralize>
+        </a></h3>
+      </div>
+      <div class="panel-body">
+        <h4>Favorites from this hunt</h4>
+        <ul>
+          <li ng-repeat="match in hunt.favorites"><a href="{{match.href}}" target="_blank">{{match.title}}, {{match.price}}€</a></li>
+        </ul>
+        <hr>
+        <button class="btn btn-danger" ng-click="removeHunt(hunt)">Delete hunt</button>
+      </div>
+    </div>
+  </li>
+</ul>

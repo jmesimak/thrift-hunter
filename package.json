@@ -1,0 +1,19 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.2.41",
+    "body-parser": "^1.15.0",
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "request": "^2.69.0"
+  }
+}
