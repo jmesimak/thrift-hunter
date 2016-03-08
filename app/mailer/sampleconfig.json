@@ -1,0 +1,7 @@
+{
+  "accessKeyId": "IAM ACCESS",
+  "secretAccessKey": "IAM SECRET",
+  "region": "region (e.g. eu-west-1)",
+  "sender": "SES registered e-mail",
+  "recipients": ["SES registered e-mail(s) if your account is not a verified e-mail sender"]
+}

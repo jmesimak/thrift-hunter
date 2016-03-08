@@ -26,3 +26,7 @@ ul.hunts {
 .nav a {
   cursor: pointer;
 }
+
+.required {
+  color: red;
+}
