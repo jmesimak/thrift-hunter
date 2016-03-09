@@ -1,5 +1,6 @@
 'use strict';
 var Crawler = require('./app/Crawler');
+var Tori = require('./app/parsers/Tori');
 var config = require('./config.json');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -18,7 +19,7 @@ function hunt(db, res) {
     var promises = [];
     var matches = {};
     hunts.forEach(function(hunt) {
-      var c = new Crawler(hunt.searchParams, hunt.filters);
+      var c = new Crawler(hunt.searchParams, hunt.filters, new Tori(hunt.searchParams.location, hunt.searchParams.category));
       promises.push(c.findMatches().then(function(success) {
         console.log(`Compsing entry for ${success.length} matches`);
         var doc = {
@@ -36,8 +37,7 @@ function hunt(db, res) {
         }
         matches[hunt.title] = success;
         console.log(`Hunted for ${hunt.title} and found ${success.length} matches`);
-        collection.update({_id: hunt._id}, {$pushAll: {matches: success}}, function(err, result) {
-        });
+        collection.update({_id: hunt._id}, {$pushAll: {matches: success}});
       }));
     });
     Promise.all(promises)
