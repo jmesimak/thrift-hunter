@@ -31,7 +31,7 @@ function sendMatches(hunt, matches) {
         }
       }
     }
-  }, function(err, data) {
+  }, (err, data) => {
     if (err) {
       console.log(`Error sending emails`);
       console.log(err);

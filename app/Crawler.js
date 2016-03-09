@@ -47,11 +47,11 @@ class Crawler {
   findMatches() {
     var crawler = this;
     var promises = [];
-    return new Promise(function(resolve, reject) {
-      crawler.filters.include.forEach(function(kw) {
+    return new Promise((resolve, reject) => {
+      crawler.filters.include.forEach((kw) => {
         promises.push(crawler.parser.findMatchesForKeyword(kw));
       });
-      Promise.all(promises).then(function(success) {
+      Promise.all(promises).then((success) => {
         var matches = success
           .reduce((prev, cur) => {
             return prev.concat(cur);
