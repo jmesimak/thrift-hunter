@@ -29,13 +29,13 @@ function hunt(res) {
     var promises = [];
     var matches = {};
     hunts.forEach((hunt) => {
-      var c = new Crawler(hunt.searchParams, hunt.filters, new Tori(hunt.searchParams.location, hunt.searchParams.category));
+      var c = new Crawler(
+        hunt.searchParams,
+        hunt.filters,
+        new Tori(hunt.searchParams.location, hunt.searchParams.category)
+      );
       promises.push(c.findMatches().then((success) => {
         console.log(`Compsing entry for ${success.length} matches`);
-        var doc = {
-          keyword: hunt.keyword,
-          matches: success
-        };
         var collection = db.collection('hunt');
         var hrefs = hunt.matches.map((m) => { return m.href }).concat(hunt.deleted);
         success = success.filter((match) => {
