@@ -2,7 +2,6 @@
 
 var cheerio = require('cheerio');
 var request = require('request');
-var utf8 = require('utf8');
 var iconv = require('iconv');
 
 class Crawler {
