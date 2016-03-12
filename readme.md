@@ -10,8 +10,10 @@ by writing your own mailer that implements the sendMatches function.
 
 To install the application, first configure the config.json files at the root and in app/mailer,
 next:
-    npm install
-    node index.js
+```
+npm install
+npm start
+```
 
 That's it. For deployment AWS Beanstalk is pretty nifty.
 
@@ -20,3 +22,12 @@ If you deploy this to production, try to follow the robots.txt that the online m
 offers. Should you test against services that do not appreciate you crawling their websites,
 it is a good idea to download a couple of their pages as html and point your crawler to those
 so you do not cause unnecessary traffic.
+
+## Testing
+To run the few makeshift tests:
+```
+npm install
+npm start
+npm test (in another tab when the server is running)
+```
+The tests rely on the fact that your database is actually empty. [FIXME].
